@@ -46,18 +46,18 @@ buttons.forEach(button => {
             if (op1 !== null && op !== null && display.value !== "") {
                 op2 = parseFloat(display.value);
                 display.value = operate(op1, op2, op);
-                op1 = parseFloat(display.value); // Store result to op1
+                op1 = parseFloat(display.value); 
                 op2 = null;
-                op = null; // Reset operator
+                op = null; 
             }
         } 
         else {
-            
-            if (op !== null && display.value === "") {
-                display.value = value;
-            } else {
-                display.value += value;
+            if(value==='.'){
+                if (display.value.includes('.')) return;
             }
+            
+            display.value += value;
+            
         }
         
         console.log("op1:", op1);
